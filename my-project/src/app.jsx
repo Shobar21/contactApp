@@ -5,6 +5,7 @@ import Model from './components/Model'
 import { collection, getDocs, onSnapshot } from 'firebase/firestore'
 import { db } from './config/firebase'
 import useDisclourse from './Hooks/useDisclourse'
+import NoContact from './components/noContact'
 
 export function App() {
   const [contacts, setContacts] = useState([])
@@ -42,9 +43,11 @@ export function App() {
       <div className='max-w-[360px] mx-auto px-4'>
         <Navbar isOpen={onOpen} />
         <div>
-          {contacts.map((contact) => (
-            <ContactCards key={contact.id} contact={contact} onEdit={handleEdit} />
-          ))}
+          {contacts.length > 0 ? (
+            contacts.map((contact) => <ContactCards key={contact.id} contact={contact} onEdit={handleEdit} />)
+          ) : (
+            <NoContact /> // Use PascalCase component
+          )}
         </div>
       </div>
       {open && <Model isOpen={open} onClose={onClose} contact={selectedContact} />}

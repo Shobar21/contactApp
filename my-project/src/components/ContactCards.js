@@ -11,6 +11,7 @@ function ContactCards({ contact, onEdit }) {
       try {
         const contactRef = doc(db, 'contact-app', contact.id)
         await deleteDoc(contactRef)
+
         console.log('Contact deleted:', contact.id)
       } catch (error) {
         console.error('Error deleting contact:', error)
