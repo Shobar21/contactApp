@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react'
-import Navbar from './components/Navbar'
-import ContactCards from './components/ContactCards'
-import Model from './components/Model'
+import Navbar from './components/Navbar.jsx'
+import ContactCards from './components/ContactCards.jsx'
+import Model from './components/Model.jsx'
 import { collection, getDocs, onSnapshot } from 'firebase/firestore'
 import { db } from './config/firebase'
-import useDisclourse from './Hooks/useDisclourse'
-import NoContact from './components/noContact'
+import useDisclourse from './Hooks/useDisclourse.jsx'
+import NoContact from './components/noContact.jsx'
 
 export function App() {
   const [contacts, setContacts] = useState([])
