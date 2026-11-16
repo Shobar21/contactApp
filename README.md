@@ -43,6 +43,7 @@ Contacts live in one Firestore collection called **`contact-app`**. Every docume
   "email": "someone@example.com"
 }
 
+```
 ## Run it on your computer
  
 You need [Node.js](https://nodejs.org/) 18 or newer.
